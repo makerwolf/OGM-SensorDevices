@@ -31,6 +31,7 @@
 #define SENS_MR24xxB1 10  // HF-Presence
 #define SENS_VEML7700 11  // Lux
 #define SENS_HLKLD2420 12 // HF-Presence
+#define SENS_HKLD2412 14  // HF-Presence (24GHz, gate-based)
 
 enum SensorState
 {
