@@ -7,6 +7,7 @@
     #include "SensorBME680.h"
     #include "SensorDummy.h"
     #include "SensorHLKLD2420.h"
+    #include "SensorLD2412.h"
     #include "SensorIAQCore.h"
     #include "SensorMR24xxB1.h"
     #include "SensorOPT300x.h"
@@ -83,6 +84,11 @@ Sensor* SensorDevices::newSensor(uint8_t iSensorClass, MeasureType iMeasureType,
             break;
         case SENS_HLKLD2420:
             lSensor = new SensorHLKLD2420(iMeasureType, iWire);
+            break;
+        #endif
+        #ifdef HF_SERIAL
+        case SENS_HKLD2412:
+            lSensor = new SensorLD2412(iMeasureType, iWire);
             break;
         #endif
     #endif
