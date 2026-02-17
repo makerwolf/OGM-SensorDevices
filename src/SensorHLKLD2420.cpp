@@ -399,7 +399,9 @@ void SensorHLKLD2420::rebootSensorHard()
 void SensorHLKLD2420::switchPower(bool on)
 {
     logDebugP("Switch power on: %u", on);
+#ifdef HF_POWER_PIN
     digitalWrite(HF_POWER_PIN, on ? HIGH : LOW);
+#endif
 
     if (on)
     {
